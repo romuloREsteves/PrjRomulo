@@ -4,7 +4,7 @@
 #include<locale.h>
 #include<string.h>
 #define POS 40
-#define COLUNAS 100
+#define COLUNAS 10000
 #define MEDIA 7.000
 
 // protótipos
