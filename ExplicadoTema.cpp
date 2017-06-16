@@ -5,9 +5,9 @@
 #include<string.h>
 #define POS 40
 #define COLUNAS 100
-#define MEDIA 7.0
+#define MEDIA 7.00
 
-// protÛtipos
+// prot√≥tipos
 void cadastrarAluno(int *controle,char alunos[POS][COLUNAS],int matriculas[POS]);
 void exibeLista(int controle,char alunos[POS][COLUNAS],int matriculas[POS],float notas[POS]);
 void lancarNotas(int controle,char alunos[POS][COLUNAS],int matriculas[POS],float notas[POS]);
@@ -22,7 +22,7 @@ main(){
 	int matriculas[POS]={};
 	do{
 		printf("\n 1 -  Cadastrar Aluno");
-		printf("\n 2 -  LanÁar Notas");
+		printf("\n 2 -  Lan√ßar Notas");
 		printf("\n 3 -  Medias");
 		printf("\n 4 -  Procurar Aluno");
 		printf("\n 5 -  Exibir Todos");
@@ -45,7 +45,7 @@ main(){
 			break;
 			case 4:
 				retorno=procurarAluno(controle,alunos,matriculas,notas,'S');
-				if(retorno==-1) printf("\n\t ==> Matricula n„o encontrada!\n\n");
+				if(retorno==-1) printf("\n\t ==> Matricula n√£o encontrada!\n\n");
 				
 			break;
 			case 5:
@@ -61,7 +61,7 @@ main(){
 			break;
 			case 0:
 				break;
-			default: printf("\n\t ==> OpÁ„o Inv·lida!!");
+			default: printf("\n\t ==> Op√ß√£o Inv√°lida!!");
 		}
 		
 	}while(menu!=0);
@@ -71,7 +71,7 @@ void cadastrarAluno(int *controle,char alunos[POS][COLUNAS],int matriculas[POS])
 	int mat;
 	
 	if(*controle==POS){
-		printf("\n\t ==> N„o existem posiÁıes livres!!\n\n");
+		printf("\n\t ==> N√£o existem posi√ß√µes livres!!\n\n");
 	}else{
 		printf("\n\t ==> Cadastro de aluno!!\n\n");		
 		printf("\n Informe a matricula do aluno ==> ");
@@ -84,7 +84,7 @@ void cadastrarAluno(int *controle,char alunos[POS][COLUNAS],int matriculas[POS])
 			printf("\n\t ==> Cadastro realizado com sucesso!!\n\n");
 			(*controle)++;
 		}else{
-			printf("\n\t ==> MatrÌcula INv·lida!!!\n\n");
+			printf("\n\t ==> Matr√≠cula INv√°lida!!!\n\n");
 		}
 	}
 }
@@ -96,7 +96,7 @@ void exibeLista(int controle,char alunos[POS][COLUNAS],int matriculas[POS],float
 		for(int x=0;x<controle;x++){
 			printf("\n\tNome do aluno: %s",alunos[x]);
 			printf("\n\tMatricula: %i",matriculas[x]);
-			printf("\n\tMÈdia: %.2f",notas[x]);
+			printf("\n\tM√©dia: %.2f",notas[x]);
 			printf("\n--------------------------------\n");
 			
 		}
@@ -109,11 +109,11 @@ void lancarNotas(int controle,char alunos[POS][COLUNAS], int matriculas[POS],flo
 	else{
 		indice=procurarAluno(controle,alunos,matriculas,notas,'N');
 		if(indice==-1){
-			printf("\n\t ==> Matricula n„o encontrada!\n\n");
+			printf("\n\t ==> Matricula n√£o encontrada!\n\n");
 		}else{
 			printf("Informe a nota do aluno ==> ");
-			scanf("%f",¨as[indice]);
-			printf("\n\t ==> Nota lanÁada com sucesso!!");
+			scanf("%f",¬¨as[indice]);
+			printf("\n\t ==> Nota lan√ßada com sucesso!!");
 		}
 	}
 }
@@ -125,7 +125,7 @@ int procurarAluno(int controle,char alunos[POS][COLUNAS],int matriculas[POS],flo
 		printf("Informe a matricula do aluno ==> ");
 		scanf("%i",&mat);
 		if(mat<=0){
-			printf("\n\t ==> Matricula Inv·lida!!");
+			printf("\n\t ==> Matricula Inv√°lida!!");
 		}else{
 			for(int x=0;x<controle;x++){
 				if(mat==matriculas[x]){
@@ -133,7 +133,7 @@ int procurarAluno(int controle,char alunos[POS][COLUNAS],int matriculas[POS],flo
 					if(exibe=='S'){
 						printf("\n\tNome do aluno: %s",alunos[x]);
 						printf("\n\tMatricula: %i",matriculas[x]);
-						printf("\n\tMÈdia: %.2f",notas[x]);
+						printf("\n\tM√©dia: %.2f",notas[x]);
 						printf("\n--------------------------------\n\n");
 					}
 					break;
@@ -151,7 +151,7 @@ int mediasAlunos(int controle,char alunos[POS][COLUNAS],float notas[POS]){
 		for(int x=0;x<controle;x++){
 			if(notas[x]>=MEDIA) aprovados++;
 			printf("\n\tNome do aluno: %s",alunos[x]);
-			printf("\n\tMÈdia: %.2f",notas[x]);
+			printf("\n\tM√©dia: %.2f",notas[x]);
 			printf("\n--------------------------------\n");
 			
 		}
@@ -181,10 +181,10 @@ void excluirAluno(int *controle,char alunos[POS][COLUNAS],int matriculas[POS],fl
 				(*controle)--;
 				printf("\n\t ==> Excluido com sucesso!\n\n");
 			}else{
-				printf("\n\t ==> OperaÁ„o cancelada!\n\n");
+				printf("\n\t ==> Opera√ß√£o cancelada!\n\n");
 			}
 		}else{
-			printf("\n\t ==> Matricula n„o encontrada!\n\n");
+			printf("\n\t ==> Matricula n√£o encontrada!\n\n");
 		}
 	}
 	
