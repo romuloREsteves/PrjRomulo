@@ -5,7 +5,7 @@
 #include<string.h>
 #define POS 40
 #define COLUNAS 100
-#define MEDIA 7.00
+#define MEDIA 7.000
 
 // protótipos
 void cadastrarAluno(int *controle,char alunos[POS][COLUNAS],int matriculas[POS]);
